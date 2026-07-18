@@ -46,7 +46,7 @@ what a reader can understand in one sitting, split it or narrow its purpose.
 
 ## Recipe folder layout
 
-```
+```text
 recipes/NN-name/
 ├── README.md        # what/why, run steps, expected output, model + RAM, gotchas
 ├── package.json     # standalone; npm i && npm start works in isolation
