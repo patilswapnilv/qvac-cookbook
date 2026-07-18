@@ -30,8 +30,9 @@ from installation to cleanup:
 - progress reporting, actionable errors, and guaranteed model cleanup;
 - no shared runtime dependency between recipes.
 
-You can copy a single recipe into another project without adopting the rest of
-the repository.
+You can copy a single recipe folder into another project without adopting the
+rest of the repository — each recipe's `tsconfig.json` is self-contained (it
+does not extend a path outside the folder).
 
 ## Quick start
 
@@ -80,11 +81,19 @@ recipes/NN-capability/
 ├── README.md          # setup, usage, concepts, expected output, troubleshooting
 ├── package.json       # standalone scripts and pinned runtime dependencies
 ├── package-lock.json  # reproducible dependency graph
-├── tsconfig.json      # strict TypeScript configuration
+├── tsconfig.json      # self-contained strict TypeScript configuration
 ├── eslint.config.js   # lint configuration
+├── .gitignore         # included when a recipe writes local artifacts
 ├── sample-data/       # small, redistributable fixtures when needed
 └── src/index.ts       # executable tutorial
 ```
+
+The root [`tsconfig.base.json`](./tsconfig.base.json) is the canonical
+`compilerOptions` template for consistency checks; recipes inline those options
+so a copied folder still typechecks.
+
+Recipes that write generated files include their own `.gitignore` in-folder
+(for example, recipe 04 ignores `output.wav`).
 
 Each `src/index.ts` follows the same lifecycle:
 
@@ -158,3 +167,4 @@ SDK-specific friction discovered while building the recipes is documented in
 ## License
 
 The cookbook is licensed under the [Apache License 2.0](./LICENSE).
+See [NOTICE](./NOTICE) for copyright attribution.

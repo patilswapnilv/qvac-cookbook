@@ -21,7 +21,7 @@ are as valuable as bugs.
 - **Suggestion:** Align docs (and any “39MB” marketing copy) with the registry
   `expectedSize`, or document that 39 MB referred to a different quant/build.
 - **Severity:** docs-gap
-- **Status:** logged
+- **Status:** tracked → [#3](https://github.com/patilswapnilv/qvac-cookbook/issues/3)
 
 ### [0.15.0] `ragIngest` takes bare strings; `chunk` defaults to true
 - **What I was doing:** Building recipe 02 (embeddings + built-in RAG). The
@@ -48,7 +48,7 @@ are as valuable as bugs.
   are assigned vs when you supply them via `ragSaveEmbeddings`). Call out
   `chunk: false` for short docs in the quickstart example.
 - **Severity:** docs-gap
-- **Status:** logged
+- **Status:** tracked → [#4](https://github.com/patilswapnilv/qvac-cookbook/issues/4)
 
 ### [0.15.0] `npm init -y` writes `"type": "commonjs"`, muddying the ESM quickstart
 - **What I was doing:** Scaffolding a fresh recipe folder the way the SDK
@@ -73,7 +73,7 @@ are as valuable as bugs.
   note: "recent npm writes `type: commonjs` by default; the next command flips
   it to `module` — this is expected."
 - **Severity:** docs-gap
-- **Status:** logged
+- **Status:** tracked → [#5](https://github.com/patilswapnilv/qvac-cookbook/issues/5)
 
 ### [0.15.0] `loadModel` doesn't propagate the `onProgress` callback param type
 - **What I was doing:** `loadModel({ modelSrc, modelType: "llm", onProgress: (p) => {...} })`.
@@ -83,7 +83,7 @@ are as valuable as bugs.
   param type from the options object. Workaround: annotate explicitly,
   `onProgress: (p: ModelProgressUpdate) => {...}` (and import the type).
 - **Severity:** papercut
-- **Status:** logged
+- **Status:** tracked → [#6](https://github.com/patilswapnilv/qvac-cookbook/issues/6)
 
 ## Filed
 

@@ -19,6 +19,7 @@ fully offline after the first model download. No API key, no cloud.
 | Model | `TTS_EN_SUPERTONIC_Q8_0` |
 | Download | approximately 240 MB |
 | Free RAM | approximately 1–2 GB |
+| Measured speed | not benchmarked |
 | Output | mono, 16-bit PCM WAV at 44.1 kHz |
 
 ## Run it

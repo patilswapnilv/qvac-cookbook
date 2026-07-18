@@ -19,7 +19,7 @@ first model download. No API key, no cloud.
 | Model | `WHISPER_TINY` |
 | Download | approximately 77.7 MB |
 | Free RAM | approximately 0.5–1 GB |
-| Measured speed | approximately 11× realtime on the author's warm CPU |
+| Measured speed | approximately 11× realtime (illustrative — not tied to a named machine) |
 
 ## Audio input
 Ground truth is the SDK export `SUPPORTED_AUDIO_FORMATS`:

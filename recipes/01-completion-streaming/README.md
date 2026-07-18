@@ -19,6 +19,7 @@ after the first model download. The "hello world" of the QVAC SDK.
 | Model | `LLAMA_3_2_1B_INST_Q4_0` |
 | Download | approximately 0.7 GB |
 | Free RAM | approximately 2 GB |
+| Measured speed | not benchmarked |
 | Network | required for the first model download |
 
 ## Run it

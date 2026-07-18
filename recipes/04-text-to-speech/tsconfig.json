@@ -1,4 +1,25 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "// moduleResolution": "Uses 'bundler' rather than 'nodenext' on purpose: @qvac/sdk 0.15.0's model-constant exports (e.g. LLAMA_3_2_1B_INST_Q4_0) don't resolve under nodenext, though they exist at runtime. tsx (esbuild) resolves the same way at runtime, so this is consistent. See FEEDBACK.md in the cookbook root (or the QVAC docs) if you hit this.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022"],
+    "types": ["node"],
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+
+    "noEmit": true,
+    "declaration": false,
+    "sourceMap": false
+  },
   "include": ["src/**/*.ts"]
 }

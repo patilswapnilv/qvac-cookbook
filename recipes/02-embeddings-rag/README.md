@@ -19,6 +19,7 @@ fully offline after the first model download. No vector DB to operate yourself.
 | Model | `GTE_LARGE_FP16` |
 | Download | approximately 0.67 GB |
 | Free RAM | approximately 1–1.5 GB |
+| Measured speed | not benchmarked |
 | Input | five bundled UTF-8 text files |
 
 ## Run it

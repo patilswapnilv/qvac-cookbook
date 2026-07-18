@@ -1,5 +1,5 @@
 {
-  "// note": "Shared strict/ESM base. Each recipe has its own tsconfig.json that extends this.",
+  "// note": "Canonical recipe TypeScript template. Each recipe inlines these compilerOptions in its own tsconfig.json so a copied folder typechecks without the repo root. scripts/check-consistency.sh diffs recipes against this file.",
   "// moduleResolution": "Uses 'bundler' rather than 'nodenext' on purpose: @qvac/sdk 0.15.0's model-constant exports (e.g. LLAMA_3_2_1B_INST_Q4_0) don't resolve under nodenext, though they exist at runtime. tsx (esbuild) resolves the same way at runtime, so this is consistent. See FEEDBACK.md.",
   "compilerOptions": {
     "target": "ES2022",
