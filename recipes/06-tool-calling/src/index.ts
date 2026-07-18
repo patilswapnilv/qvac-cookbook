@@ -35,14 +35,15 @@ const tools = [
     name: "get_weather",
     description: "Get current weather for a city",
     parameters: weatherParams,
-    handler: async (args: Record<string, unknown>) => {
-      const { city } = weatherParams.parse(args);
-      return {
-        city,
-        temperature: "22°C",
-        condition: "Partly cloudy",
-      };
-    },
+handler: async (args: Record<string, unknown>) => {
+  const parsed = weatherParams.safeParse(args);
+  const city = parsed.success ? parsed.data.city : "unknown";
+  return {
+    city,
+    temperature: "22°C",
+    condition: "Partly cloudy",
+  };
+},
   },
 ];
 
