@@ -152,6 +152,8 @@ version, model constant, command, and complete error message in a GitHub issue.
 Corrections, platform results, and focused recipes are welcome. Read
 [`CONTRIBUTING.md`](./CONTRIBUTING.md) before opening a pull request. Planned
 capabilities and contribution opportunities live in [`ROADMAP.md`](./ROADMAP.md).
+Release notes are in [`CHANGELOG.md`](./CHANGELOG.md); the SDK bump procedure is
+[`docs/SDK-VERSION-BUMP.md`](./docs/SDK-VERSION-BUMP.md).
 
 SDK-specific friction discovered while building the recipes is documented in
 [`FEEDBACK.md`](./FEEDBACK.md), with links to upstream issues where available.

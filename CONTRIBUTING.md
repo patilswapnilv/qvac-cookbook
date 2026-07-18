@@ -70,7 +70,9 @@ canonical template (CI checks this).
 1. Open an issue describing the capability, default model, download/RAM
    estimates, and platforms before substantial work.
 2. Copy `recipes/01-completion-streaming/` to `recipes/NN-name/` and rename
-   the package in `package.json`.
+   the package in `package.json`. Keep `tsconfig.json` **self-contained**
+   (inlined `compilerOptions` matching [`tsconfig.base.json`](./tsconfig.base.json);
+   do not add an `extends` path outside the recipe folder).
 3. Implement `src/index.ts` against installed `@qvac/sdk` types and official
    docs; keep the load → infer → present → `unloadModel` in `finally` lifecycle.
 4. Write the recipe README (requirements table including Measured speed,
@@ -81,6 +83,10 @@ canonical template (CI checks this).
 8. From the repo root: `./scripts/check-consistency.sh`.
 9. Run the recipe locally (`npm install && npm start`) on a supported machine.
 10. Open a focused pull request.
+
+When `@qvac/sdk` itself releases a new version, follow
+[`docs/SDK-VERSION-BUMP.md`](./docs/SDK-VERSION-BUMP.md) instead of inventing a
+one-off bump process. Record user-facing changes in [`CHANGELOG.md`](./CHANGELOG.md).
 
 ## Local checks before you open a PR
 
