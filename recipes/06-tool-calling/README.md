@@ -20,7 +20,7 @@ download. No API key, no cloud, no MCP.
 | Model | `QWEN3_1_7B_INST_Q4` |
 | Download | approximately 1.0 GB |
 | Free RAM | approximately 3–4 GB |
-| Measured speed | approximately 147 tok/s for the follow-up on the author's CPU |
+| Measured speed | approximately 147 tok/s for the follow-up (illustrative — not tied to a named machine) |
 
 Tool calling is **app-managed**: the SDK parses calls and can attach `invoke()`,
 but it does **not** auto-loop tool → follow-up. You own that cycle.

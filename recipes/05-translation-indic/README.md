@@ -20,7 +20,7 @@ neural MT for Indic languages.
 | Model | `MARIAN_EN_HI_INDIC_200M_Q4_0` |
 | Download | approximately 127 MB |
 | Free RAM | approximately 0.5–1.5 GB |
-| Measured speed | approximately 18 seconds for a short sentence on the author's CPU |
+| Measured speed | approximately 18 seconds for a short sentence (illustrative — not tied to a named machine) |
 
 The constant name is legacy (`MARIAN_*`); the file is multilingual IndicTrans2
 **en→Indic** (Hindi, Marathi, and ~20 other Indic languages share the same weights).
