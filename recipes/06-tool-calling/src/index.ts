@@ -25,7 +25,7 @@ const prompt =
 
 // One tool + fixed mock data keeps the demo deterministic (no network).
 // Reuse the schema for ToolInput.parameters and handler narrowing. The SDK types
-// handlers as Record<string, unknown>, so parse (don't rely on z.infer alone).
+// handlers as Record<string, unknown>, so safe-parse (don't rely on z.infer alone).
 const weatherParams = z.object({
   city: z.string().describe("City name"),
 });
@@ -35,15 +35,17 @@ const tools = [
     name: "get_weather",
     description: "Get current weather for a city",
     parameters: weatherParams,
-handler: async (args: Record<string, unknown>) => {
-  const parsed = weatherParams.safeParse(args);
-  const city = parsed.success ? parsed.data.city : "unknown";
-  return {
-    city,
-    temperature: "22°C",
-    condition: "Partly cloudy",
-  };
-},
+    handler: async (args: Record<string, unknown>) => {
+      const parsed = weatherParams.safeParse(args);
+      if (!parsed.success) {
+        return { error: "Invalid tool arguments", details: parsed.error.issues };
+      }
+      return {
+        city: parsed.data.city,
+        temperature: "22°C",
+        condition: "Partly cloudy",
+      };
+    },
   },
 ];
 
