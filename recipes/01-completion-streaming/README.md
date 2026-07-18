@@ -17,9 +17,9 @@ after the first model download. The "hello world" of the QVAC SDK.
 |-------------|-------|
 | Runtime | Node.js 20+ |
 | Model | `LLAMA_3_2_1B_INST_Q4_0` |
-| Download | approximately 0.7 GB |
+| Download | approximately 773 MB (registry `expectedSize`) |
 | Free RAM | approximately 2 GB |
-| Measured speed | not benchmarked |
+| Measured speed | approximately 80 tok/s warm (Apple M5 Max, 36 GB, macOS 26.5.1, SDK 0.15.0; see [BENCHMARKS.md](../../BENCHMARKS.md)) |
 | Network | required for the first model download |
 
 ## Run it

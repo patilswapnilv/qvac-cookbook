@@ -19,7 +19,7 @@ first model download. No API key, no cloud.
 | Model | `WHISPER_TINY` |
 | Download | approximately 77.7 MB |
 | Free RAM | approximately 0.5–1 GB |
-| Measured speed | approximately 11× realtime (illustrative — not tied to a named machine) |
+| Measured speed | approximately 1.1× realtime end-to-end including model load for the 5.35 s fixture (Apple M5 Max, 36 GB, macOS 26.5.1, SDK 0.15.0; see [BENCHMARKS.md](../../BENCHMARKS.md)) |
 
 ## Audio input
 Ground truth is the SDK export `SUPPORTED_AUDIO_FORMATS`:

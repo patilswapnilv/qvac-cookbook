@@ -56,23 +56,23 @@ Pass a custom prompt after `--`:
 npm start -- "Explain local-first AI in two sentences."
 ```
 
-The first run downloads approximately 0.7 GB for the default Llama model.
+The first run downloads approximately 773 MB for the default Llama model.
 Later runs reuse the local cache.
 
 ## Recipes
 
 | # | Goal | Default model | Approx. download | Free RAM |
 |---|------|---------------|------------------|----------|
-| [01](./recipes/01-completion-streaming) | Stream a local chat completion | `LLAMA_3_2_1B_INST_Q4_0` | 0.7 GB | 2 GB |
-| [02](./recipes/02-embeddings-rag) | Embed documents and run semantic search | `GTE_LARGE_FP16` | 0.67 GB | 1–1.5 GB |
+| [01](./recipes/01-completion-streaming) | Stream a local chat completion | `LLAMA_3_2_1B_INST_Q4_0` | 773 MB | 2 GB |
+| [02](./recipes/02-embeddings-rag) | Embed documents and run semantic search | `GTE_LARGE_FP16` | 670 MB | 1–1.5 GB |
 | [03](./recipes/03-speech-to-text) | Transcribe a local audio file | `WHISPER_TINY` | 77.7 MB | 0.5–1 GB |
-| [04](./recipes/04-text-to-speech) | Synthesize speech into a WAV file | `TTS_EN_SUPERTONIC_Q8_0` | 240 MB | 1–2 GB |
+| [04](./recipes/04-text-to-speech) | Synthesize speech into a WAV file | `TTS_EN_SUPERTONIC_Q8_0` | 252 MB | 1–2 GB |
 | [05](./recipes/05-translation-indic) | Translate English to Marathi or Hindi | `MARIAN_EN_HI_INDIC_200M_Q4_0` | 127 MB | 0.5–1.5 GB |
-| [06](./recipes/06-tool-calling) | Let a local model call application tools | `QWEN3_1_7B_INST_Q4` | 1.0 GB | 3–4 GB |
+| [06](./recipes/06-tool-calling) | Let a local model call application tools | `QWEN3_1_7B_INST_Q4` | 1.06 GB | 3–4 GB |
 
-Download and memory figures are practical estimates, not guarantees. Runtime
-speed depends on CPU, acceleration support, thermal limits, and current memory
-pressure.
+Download sizes above match registry `expectedSize` / on-disk bytes (rounded for
+the table). Free-RAM figures are practical estimates, not guarantees. Named-machine
+speed measurements live in [`BENCHMARKS.md`](./BENCHMARKS.md).
 
 ## How recipes are structured
 
@@ -155,6 +155,7 @@ capabilities and contribution opportunities live in [`ROADMAP.md`](./ROADMAP.md)
 
 SDK-specific friction discovered while building the recipes is documented in
 [`FEEDBACK.md`](./FEEDBACK.md), with links to upstream issues where available.
+Named-machine runtime measurements are in [`BENCHMARKS.md`](./BENCHMARKS.md).
 
 ## Official QVAC resources
 

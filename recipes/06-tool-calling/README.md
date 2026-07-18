@@ -18,9 +18,9 @@ download. No API key, no cloud, no MCP.
 |-------------|-------|
 | Runtime | Node.js 20+ |
 | Model | `QWEN3_1_7B_INST_Q4` |
-| Download | approximately 1.0 GB |
+| Download | approximately 1.06 GB (registry `expectedSize`) |
 | Free RAM | approximately 3–4 GB |
-| Measured speed | approximately 147 tok/s for the follow-up (illustrative — not tied to a named machine) |
+| Measured speed | approximately 32–64 tok/s across two-turn warm runs; `get_weather` hit 5/5 at `temp:0, seed:42` (Apple M5 Max, 36 GB, macOS 26.5.1, SDK 0.15.0; see [BENCHMARKS.md](../../BENCHMARKS.md)) |
 
 Tool calling is **app-managed**: the SDK parses calls and can attach `invoke()`,
 but it does **not** auto-loop tool → follow-up. You own that cycle. The recipe

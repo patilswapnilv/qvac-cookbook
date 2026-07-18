@@ -17,9 +17,9 @@ fully offline after the first model download. No vector DB to operate yourself.
 |-------------|-------|
 | Runtime | Node.js 20+ |
 | Model | `GTE_LARGE_FP16` |
-| Download | approximately 0.67 GB |
+| Download | approximately 670 MB (registry `expectedSize`) |
 | Free RAM | approximately 1–1.5 GB |
-| Measured speed | not benchmarked |
+| Measured speed | warm search ~7 s end-to-end; top-1 score stable across runs (Apple M5 Max, 36 GB, macOS 26.5.1, SDK 0.15.0; see [BENCHMARKS.md](../../BENCHMARKS.md)) |
 | Input | five bundled UTF-8 text files |
 
 ## Run it

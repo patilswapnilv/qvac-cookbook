@@ -144,6 +144,26 @@ all resolve and match the entries below in substance.
 - **Severity:** docs-gap
 - **Status:** filed → [#3324](https://github.com/tetherto/qvac/issues/3324)
 
+## Runtime verification notes (2026-07-18)
+
+Named-machine runs on Apple M5 Max / 36 GB / macOS 26.5.1 / `@qvac/sdk` 0.15.0
+(see [`BENCHMARKS.md`](./BENCHMARKS.md)):
+
+- **03 download size:** on-disk `WHISPER_TINY` is exactly `77691713` bytes
+  (77.7 MB) — matches registry; docs “~39 MB” gap in Open #3 still stands for
+  upstream marketing copy only.
+- **04 buffer / rate:** `await textToSpeech({ stream: false }).buffer` is a
+  `number[]` at runtime; WAV header is mono s16le @ **44100** Hz. Subjective
+  listen remains a human checkpoint.
+- **05 `stream` default:** JSDoc on `translate` still says “Defaults to true”,
+  but the installed client takes the non-streaming path when `params.stream` is
+  falsy (`if (params.stream) { … }`). Recipe 05 keeps `stream: false` explicit.
+- **06 tool calls:** `get_weather` hit **5/5** at `temp:0, seed:42` on this
+  machine; measured two-turn throughput was ~32–64 tok/s (not the older
+  illustrative ~147 tok/s).
+- **02 RAG stability:** top-hit ids and scores were identical across cold/warm
+  runs against the same workspace.
+
 ## Resolved
 
 _(none yet)_
