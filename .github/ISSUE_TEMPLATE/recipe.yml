@@ -1,0 +1,52 @@
+name: Recipe proposal
+description: Propose one focused, independently runnable QVAC recipe.
+title: "feat(recipe): "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: capability
+    attributes:
+      label: Capability and user outcome
+      description: What QVAC capability will this teach, and what will the reader produce?
+    validations:
+      required: true
+  - type: textarea
+    id: sdk
+    attributes:
+      label: Verified SDK surface
+      description: Link to official docs, source, or TypeScript definitions for the APIs involved.
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Proposed model
+      description: Include the exact model constant or source.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Expected requirements
+      description: Download size, free RAM, input format, and known platform constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope boundaries
+      description: What will this recipe deliberately not implement?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Proposal checks
+      options:
+        - label: I checked the README and roadmap for an existing equivalent recipe.
+          required: true
+        - label: The recipe can run independently with `npm install && npm start`.
+          required: true
+        - label: Any proposed fixture can be redistributed publicly.
+          required: true

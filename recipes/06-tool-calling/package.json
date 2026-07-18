@@ -1,0 +1,27 @@
+{
+  "name": "qvac-recipe-06-tool-calling",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App-managed tool / function calling with a local Qwen3 Instruct model via the QVAC SDK.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@qvac/sdk": "0.15.0",
+    "zod": "^4.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^20.19.0",
+    "eslint": "^9.13.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.10.0"
+  }
+}

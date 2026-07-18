@@ -1,0 +1,26 @@
+{
+  "name": "qvac-recipe-05-translation-indic",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline English→Marathi/Hindi translation with IndicTrans2 via the QVAC SDK.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@qvac/sdk": "0.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^20.19.0",
+    "eslint": "^9.13.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.10.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "qvac-recipe-04-text-to-speech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthesize speech from text with the QVAC SDK Supertonic TTS engine.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@qvac/sdk": "0.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^20.19.0",
+    "eslint": "^9.13.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.10.0"
+  }
+}

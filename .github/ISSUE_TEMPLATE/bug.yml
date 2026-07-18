@@ -1,0 +1,56 @@
+name: Recipe bug
+description: Report a reproducible problem in an existing cookbook recipe.
+title: "fix(recipe-NN): "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove secrets and personal data from logs before submitting.
+        If the failure is in the QVAC SDK itself, use the upstream issue tracker.
+  - type: dropdown
+    id: recipe
+    attributes:
+      label: Recipe
+      options:
+        - 01 — completion streaming
+        - 02 — embeddings and RAG
+        - 03 — speech-to-text
+        - 04 — text-to-speech
+        - 05 — Indic translation
+        - 06 — tool calling
+        - Repository documentation or CI
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, CPU architecture, Node.js version, and npm version.
+      placeholder: "macOS 15, arm64, Node 20.19.0, npm 10.8.2"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. cd recipes/...
+        2. npm install
+        3. npm start -- ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and complete error
+      render: shell
+    validations:
+      required: true
