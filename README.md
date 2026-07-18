@@ -83,7 +83,7 @@ recipes/NN-capability/
 ├── package-lock.json  # reproducible dependency graph
 ├── tsconfig.json      # self-contained strict TypeScript configuration
 ├── eslint.config.js   # lint configuration
-├── .gitignore         # optional; only when the recipe writes local artifacts
+├── .gitignore         # included when a recipe writes local artifacts
 ├── sample-data/       # small, redistributable fixtures when needed
 └── src/index.ts       # executable tutorial
 ```
@@ -91,6 +91,9 @@ recipes/NN-capability/
 The root [`tsconfig.base.json`](./tsconfig.base.json) is the canonical
 `compilerOptions` template for consistency checks; recipes inline those options
 so a copied folder still typechecks.
+
+Recipes that write generated files include their own `.gitignore` in-folder
+(for example, recipe 04 ignores `output.wav`).
 
 Each `src/index.ts` follows the same lifecycle:
 
