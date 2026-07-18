@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Downloaded models & SDK cache (never commit multi-GB weights)
+.qvac/
+models/
+*.gguf
+*.onnx
+output.wav
+
+# Logs & env
+*.log
+.env
+.env.*
+!.env.example
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local-only working material
+/private/
+/scratch/
