@@ -51,14 +51,16 @@ recipes/NN-name/
 ├── README.md        # what/why, run steps, expected output, model + RAM, gotchas
 ├── package.json     # standalone; npm i && npm start works in isolation
 ├── package-lock.json
-├── tsconfig.json    # extends ../../tsconfig.base.json
+├── tsconfig.json    # self-contained; inline compilerOptions (see tsconfig.base.json)
 ├── eslint.config.js
 ├── src/index.ts     # < ~100 lines, heavily commented
 └── sample-data/     # tiny fixtures where needed (< 1 MB); optional
 ```
 
 Use the templates already in `recipes/01-completion-streaming/` as your starting
-point for `package.json`, `tsconfig.json`, and the README structure.
+point for `package.json`, `tsconfig.json`, and the README structure. Keep
+`compilerOptions` aligned with the root [`tsconfig.base.json`](./tsconfig.base.json)
+canonical template (CI checks this).
 
 ## Local checks before you open a PR
 
