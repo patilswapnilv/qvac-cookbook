@@ -83,6 +83,7 @@ recipes/NN-capability/
 ├── package-lock.json  # reproducible dependency graph
 ├── tsconfig.json      # self-contained strict TypeScript configuration
 ├── eslint.config.js   # lint configuration
+├── .gitignore         # optional; only when the recipe writes local artifacts
 ├── sample-data/       # small, redistributable fixtures when needed
 └── src/index.ts       # executable tutorial
 ```
@@ -163,3 +164,4 @@ SDK-specific friction discovered while building the recipes is documented in
 ## License
 
 The cookbook is licensed under the [Apache License 2.0](./LICENSE).
+See [NOTICE](./NOTICE) for copyright attribution.
