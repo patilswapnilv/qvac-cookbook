@@ -24,18 +24,25 @@ const prompt =
   process.argv.slice(2).join(" ").trim() || "What's the weather in Tokyo?";
 
 // One tool + fixed mock data keeps the demo deterministic (no network).
+// Reuse the schema for ToolInput.parameters and handler narrowing. The SDK types
+// handlers as Record<string, unknown>, so parse (don't rely on z.infer alone).
+const weatherParams = z.object({
+  city: z.string().describe("City name"),
+});
+
 const tools = [
   {
     name: "get_weather",
     description: "Get current weather for a city",
-    parameters: z.object({
-      city: z.string().describe("City name"),
-    }),
-    handler: async (args: Record<string, unknown>) => ({
-      city: String(args.city ?? "unknown"),
-      temperature: "22°C",
-      condition: "Partly cloudy",
-    }),
+    parameters: weatherParams,
+    handler: async (args: Record<string, unknown>) => {
+      const { city } = weatherParams.parse(args);
+      return {
+        city,
+        temperature: "22°C",
+        condition: "Partly cloudy",
+      };
+    },
   },
 ];
 
