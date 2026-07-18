@@ -23,7 +23,9 @@ download. No API key, no cloud, no MCP.
 | Measured speed | approximately 147 tok/s for the follow-up (illustrative — not tied to a named machine) |
 
 Tool calling is **app-managed**: the SDK parses calls and can attach `invoke()`,
-but it does **not** auto-loop tool → follow-up. You own that cycle.
+but it does **not** auto-loop tool → follow-up. You own that cycle. The recipe
+source is longer than the usual ~100-line teaching target on purpose — the
+extra lines walk the app-managed event loop.
 
 ## Run it
 

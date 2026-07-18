@@ -27,9 +27,12 @@ Every recipe must meet all of these:
 2. **Shows download progress.** First run prints model download progress via the
    SDK's `onProgress` callback. The README states model size, RAM needed, and
    rough CPU-only expectations.
-3. **Comments teach the *why*.** `src/index.ts` stays under ~100 lines and is
-   heavily commented for someone's first hour with the SDK — the comments are the
-   tutorial, not the code.
+3. **Comments teach the *why*.** For single-turn recipes, `src/index.ts` stays
+   under ~100 lines and is heavily commented for someone's first hour with the
+   SDK — the comments are the tutorial, not the code. Multi-turn or
+   app-managed event-loop recipes (for example tool calling) may exceed that
+   when the extra lines teach the contract; they must stay focused and
+   comment-led, not grow into a framework.
 4. **Actionable errors.** Failures produce a message a user can act on
    (e.g. "model needs ~2 GB RAM; try the Q4_0 variant"), not a raw stack trace.
 5. **Resource hygiene.** `unloadModel` is always called in a `finally` block.
@@ -53,7 +56,7 @@ recipes/NN-name/
 ├── package-lock.json
 ├── tsconfig.json    # self-contained; inline compilerOptions (see tsconfig.base.json)
 ├── eslint.config.js
-├── src/index.ts     # < ~100 lines, heavily commented
+├── src/index.ts     # ~100 lines for single-turn; multi-turn may run longer
 └── sample-data/     # tiny fixtures where needed (< 1 MB); optional
 ```
 
