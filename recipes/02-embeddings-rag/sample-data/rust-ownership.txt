@@ -1,0 +1,2 @@
+Rust ownership
+Rust tracks which value owns each piece of memory and when borrows are allowed. The borrow checker enforces these rules at compile time so you get memory safety without a garbage collector.

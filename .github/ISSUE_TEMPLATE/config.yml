@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: QVAC SDK documentation
+    url: https://docs.qvac.tether.io
+    about: Check the official SDK documentation before reporting cookbook issues.
+  - name: QVAC SDK issue tracker
+    url: https://github.com/tetherto/qvac/issues
+    about: Report reproducible SDK bugs to the upstream QVAC project.
