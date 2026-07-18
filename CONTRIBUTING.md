@@ -65,6 +65,23 @@ point for `package.json`, `tsconfig.json`, and the README structure. Keep
 `compilerOptions` aligned with the root [`tsconfig.base.json`](./tsconfig.base.json)
 canonical template (CI checks this).
 
+## Adding a recipe
+
+1. Open an issue describing the capability, default model, download/RAM
+   estimates, and platforms before substantial work.
+2. Copy `recipes/01-completion-streaming/` to `recipes/NN-name/` and rename
+   the package in `package.json`.
+3. Implement `src/index.ts` against installed `@qvac/sdk` types and official
+   docs; keep the load → infer → present → `unloadModel` in `finally` lifecycle.
+4. Write the recipe README (requirements table including Measured speed,
+   expected output, troubleshooting).
+5. Add the folder name to the CI matrix in `.github/workflows/ci.yml`.
+6. Add a row to the root README recipes table.
+7. From the recipe folder: `npm ci --ignore-scripts && npm run typecheck && npm run lint`.
+8. From the repo root: `./scripts/check-consistency.sh`.
+9. Run the recipe locally (`npm install && npm start`) on a supported machine.
+10. Open a focused pull request.
+
 ## Local checks before you open a PR
 
 From inside your recipe folder:
@@ -73,6 +90,12 @@ From inside your recipe folder:
 npm ci --ignore-scripts
 npm run typecheck   # tsc --noEmit, strict
 npm run lint        # eslint
+```
+
+From the repository root (after adding or changing recipe config):
+
+```bash
+./scripts/check-consistency.sh
 ```
 
 Then run the actual recipe on a supported local machine:
