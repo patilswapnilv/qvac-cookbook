@@ -6,6 +6,10 @@ Filed items link to their GitHub issue. (`@qvac/sdk` version noted per entry.)
 Rule: log everything within 5 minutes of hitting it, however small. Docs-gaps
 are as valuable as bugs.
 
+Link check (2026-07-18): own-repo [#3](https://github.com/patilswapnilv/qvac-cookbook/issues/3)–[#6](https://github.com/patilswapnilv/qvac-cookbook/issues/6)
+and upstream [#3323](https://github.com/tetherto/qvac/issues/3323)–[#3324](https://github.com/tetherto/qvac/issues/3324)
+all resolve and match the entries below in substance.
+
 ## Open
 
 ### [0.15.0] Docs say Whisper Tiny is ~39 MB; registry `expectedSize` is 77.7 MB
