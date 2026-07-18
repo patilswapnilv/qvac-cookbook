@@ -43,18 +43,30 @@ import { readFileSync } from "node:fs";
 
 const [canonicalPath, ...recipeDirs] = process.argv.slice(2);
 const canonical = JSON.parse(readFileSync(canonicalPath, "utf8"));
-const want = JSON.stringify(canonical.compilerOptions);
+
+function stableStringifyObject(obj) {
+  if (obj === null || typeof obj !== "object" || Array.isArray(obj)) return JSON.stringify(obj);
+  const out = {};
+  for (const key of Object.keys(obj).sort()) out[key] = obj[key];
+  return JSON.stringify(out);
+}
+
+const want = stableStringifyObject(canonical.compilerOptions);
 
 for (const dir of recipeDirs) {
   const path = `${dir}/tsconfig.json`;
   const cfg = JSON.parse(readFileSync(path, "utf8"));
-  const got = JSON.stringify(cfg.compilerOptions);
+  if (typeof cfg.extends === "string") {
+    console.error(`consistency: ${dir.split("/").pop()}: tsconfig.json must not use \"extends\" (recipes must be copyable)`);
+    process.exit(1);
+  }
+  const got = stableStringifyObject(cfg.compilerOptions);
   if (got !== want) {
     console.error(`consistency: ${dir.split("/").pop()}: tsconfig compilerOptions drift from tsconfig.base.json`);
     process.exit(1);
   }
   if (!Array.isArray(cfg.include)) {
-    console.error(`consistency: ${dir.split("/").pop()}: tsconfig.json must include an "include" array`);
+    console.error(`consistency: ${dir.split("/").pop()}: tsconfig.json must include an \"include\" array`);
     process.exit(1);
   }
 }
