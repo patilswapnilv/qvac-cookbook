@@ -17,9 +17,9 @@ fully offline after the first model download. No API key, no cloud.
 |-------------|-------|
 | Runtime | Node.js 20+ |
 | Model | `TTS_EN_SUPERTONIC_Q8_0` |
-| Download | approximately 240 MB |
+| Download | approximately 252 MB (registry `expectedSize`; was previously rounded as ~240 MB) |
 | Free RAM | approximately 1–2 GB |
-| Measured speed | not benchmarked |
+| Measured speed | approximately 6.3 s warm wall for the default sentence → 5.16 s WAV @ 44.1 kHz (Apple M5 Max, 36 GB, macOS 26.5.1, SDK 0.15.0; see [BENCHMARKS.md](../../BENCHMARKS.md)) |
 | Output | mono, 16-bit PCM WAV at 44.1 kHz |
 
 ## Run it

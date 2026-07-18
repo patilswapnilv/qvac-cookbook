@@ -31,7 +31,7 @@ async function main(): Promise<void> {
     // `modelSrc` is a bundled model constant. It could also be a Hugging Face /
     // Pear / HTTP URL — the constant just resolves to a known-good source.
     // `modelType: "llm"` selects the llama.cpp completion addon.
-    // `onProgress` fires only on the *first* run while the ~0.7 GB file downloads;
+    // `onProgress` fires only on the *first* run while the ~773 MB file downloads;
     // afterwards the model is cached and load is near-instant (no progress ticks).
     modelId = await loadModel({
       modelSrc: LLAMA_3_2_1B_INST_Q4_0,

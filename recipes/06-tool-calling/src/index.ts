@@ -156,7 +156,7 @@ async function main(): Promise<void> {
     console.error(
       "Common causes:\n" +
         "  • Not enough RAM — Qwen3 1.7B Q4 wants ~3–4 GB free.\n" +
-        "  • First run needs network for QWEN3_1_7B_INST_Q4 (~1.0 GB).\n" +
+        "  • First run needs network for QWEN3_1_7B_INST_Q4 (~1.06 GB).\n" +
         "  • No tool call? Small Instruct models can be flaky; see README.\n" +
         "  • Want SDK logs? Set QVAC_CONFIG_PATH to a JSON with\n" +
         '    { "loggerLevel": "info", "loggerConsoleOutput": true } and re-run.',

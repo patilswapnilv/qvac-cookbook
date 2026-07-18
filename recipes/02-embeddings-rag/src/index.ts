@@ -40,7 +40,7 @@ async function main(): Promise<void> {
 
   try {
     // --- Load ------------------------------------------------------------------
-    // GTE Large (~0.67 GB) produces 1024-dim vectors via the embeddings addon.
+    // GTE Large (~670 MB) produces 1024-dim vectors via the embeddings addon.
     // Annotate `p`: loadModel does not propagate onProgress's parameter type.
     modelId = await loadModel({
       modelSrc: GTE_LARGE_FP16,

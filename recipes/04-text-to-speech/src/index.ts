@@ -49,7 +49,7 @@ function pcmToWav(samples: number[], sampleRate: number): Buffer {
 async function main(): Promise<void> {
   let modelId: string | undefined;
   try {
-    // --- Load: ~240 MB; "tts" → tts-ggml; no Piper/eSpeak -------------------
+    // --- Load: ~252 MB; "tts" → tts-ggml; no Piper/eSpeak -------------------
     modelId = await loadModel({
       modelSrc: TTS_EN_SUPERTONIC_Q8_0,
       modelType: "tts",
