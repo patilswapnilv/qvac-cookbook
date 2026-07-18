@@ -78,7 +78,6 @@ async function main(): Promise<void> {
     }
 
     // Close releases locks but keeps data (no deleteOnClose) so the next run reuses it.
-    await ragCloseWorkspace({ workspace: WORKSPACE });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error(`\n✗ Recipe failed: ${msg}\n`);
@@ -91,6 +90,11 @@ async function main(): Promise<void> {
     );
     process.exitCode = 1;
   } finally {
+    try {
+      await ragCloseWorkspace({ workspace: WORKSPACE });
+    } catch {
+      // Ignore: workspace may not exist/be open if ingest/search failed early.
+    }
     // Always free the model — skipping this leaks a large allocation for the process life.
     if (modelId) await unloadModel({ modelId });
   }
