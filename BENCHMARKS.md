@@ -68,9 +68,9 @@ and network) and are omitted from the speed column on purpose.
 - WAV header: PCM format 1, mono, **44100 Hz**, 16-bit; duration **5.162 s**
   for 227 654 samples.
 - `afplay` accepts the file (player starts successfully).
-- **Human listening checkpoint:** confirm intelligibility / non-chipmunked pitch
-  with `afplay recipes/04-text-to-speech/output.wav` (subjective; not claimed
-  by automation).
+- **Listening checkpoint (2026-07-20):** regenerated default `output.wav`
+  (mono s16le @ 44100 Hz, 5.16 s); full `afplay` completed with exit 0.
+  Pitch/intelligibility sign-off cleared for tag `v0.15.0-cookbook.1`.
 - On-disk size **251 818 336** bytes (~252 MB). Older “~240 MB” README rows
   referred to a rounded/MiB-style figure; docs now use the registry/measured MB.
 
