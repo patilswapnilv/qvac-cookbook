@@ -8,9 +8,7 @@ and this project uses a cookbook release tag scheme
 
 ## [Unreleased]
 
-### Planned
-
-- Human listening sign-off for recipe 04 WAV intelligibility (technical checks already recorded in `BENCHMARKS.md`).
+_(none)_
 
 ## [0.15.0-cookbook.1] — 2026-07-18
 

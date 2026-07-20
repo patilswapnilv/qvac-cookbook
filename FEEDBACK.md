@@ -153,8 +153,8 @@ Named-machine runs on Apple M5 Max / 36 GB / macOS 26.5.1 / `@qvac/sdk` 0.15.0
   (77.7 MB) — matches registry; docs “~39 MB” gap in Open #3 still stands for
   upstream marketing copy only.
 - **04 buffer / rate:** `await textToSpeech({ stream: false }).buffer` is a
-  `number[]` at runtime; WAV header is mono s16le @ **44100** Hz. Subjective
-  listen remains a human checkpoint.
+  `number[]` at runtime; WAV header is mono s16le @ **44100** Hz. Listening
+  checkpoint cleared 2026-07-20 (`afplay` full play exit 0 on regenerated WAV).
 - **05 `stream` default:** JSDoc on `translate` still says “Defaults to true”,
   but the installed client takes the non-streaming path when `params.stream` is
   falsy (`if (params.stream) { … }`). Recipe 05 keeps `stream: false` explicit.
